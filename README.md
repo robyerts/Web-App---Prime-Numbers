@@ -1,7 +1,7 @@
 ### Web App that checks the primality of numbers in a given interval
 Python & Flask
 
-At the main index will be displayed the numbers from 0 to 1000(exclusive), each containing a hyperlink, that will lead to a page saying whether the number is prime or not.
+At the main index will be displayed numbers from 0 to 1000(exclusive), each containing a hyperlink, that will lead to a page saying whether the number is prime or not.
 
 Each page contains at most 1000 numbers. An user can iterate through all the pages with the buttons in the bottom-center of the page or, give a *Start Number* and an *End Number" to show all the numbers from that interval.
 
