@@ -1,0 +1,62 @@
+<!doctype html>
+<head>
+
+<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+
+<script>
+
+function handleClick() {
+	var startNumber = $("#startNumber").val();
+
+	
+	var endNumber = $("#endNumber").val();
+	
+	// if (startNumber< 0){
+	// 	startNumber = 0
+	// 	alert("")
+	// }
+	
+	// if (endNumber - startNumber>1000){
+	// 	endNumber = startNumber + 1000
+	// }
+
+  window.location.href = '../'+startNumber+'/'+endNumber;
+}
+
+</script>
+
+<form id="registerSubmit" action="javascript:handleClick()">
+
+	  Start Number:<br>
+
+	  <input type="text" id="startNumber" value="0">
+	  <br>
+	  
+	  End Number:<br>
+	  
+	  <input type="text" id="endNumber" value="1000">
+	  <br><br>
+	  <input type="submit" value="Submit">
+</form>
+
+<title>Hello !!! THIS IS THE MAIN PAGE</title>
+
+</head>
+
+<h1>Primes from {{res[0]}} to {{res[res|length-1]+1}}(exclusive):</h1>
+
+{% for item in res %}
+  <a href="/{{item}}">{{ item }}</a>
+{% endfor %}
+
+<p align="center">
+{% if res[0]!=0 %}
+    {% if res[0]-1000>=0 %}
+        <button onclick="window.location.href='../{{res[0]-1000}}/{{res[0]}}'">Prev Page</button>
+    {% else %}
+        <button onclick="window.location.href='../0/{{res[0]}}'">Prev Page</button>
+    {% endif %}
+{% endif %}
+    <button onclick="window.location.href='../{{res[res|length-1]+1}}/{{res[res|length-1]+1000+1}}'">Next Page</button>
+</p>
+
